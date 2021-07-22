@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = current_user.posts.new
   end
 
   # GET /posts/1/edit
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     # This is what creates the posts
 
     respond_to do |format|
@@ -67,6 +67,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:body, :username)
+      params.require(:post).permit(:body)
     end
 end
