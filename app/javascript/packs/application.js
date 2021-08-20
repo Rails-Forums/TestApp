@@ -21,11 +21,10 @@ function printPage() {
 }
 
 // Foundation setup.
-// Not needed yet setup later on.
-// import Foundation from 'foundation-sites'
-// $(document).on('turbolinks:load', function() {
-//   $(document).foundation()
-// });
+import Foundation from 'foundation-sites'
+$(document).on('turbolinks:load', function() {
+  $(document).foundation()
+});
 
 
 // Custom scss files.

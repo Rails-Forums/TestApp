@@ -26,10 +26,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Haml
-# That was something on my end you see how haml-rails is right under this? Becuase i put it in twice it didnt like that because it has 2 different versions in the bundler gemfile.
 gem "haml-rails", "~> 2.0"
 
 gem 'devise'
+
+gem 'foundation-rails'
+gem 'autoprefixer-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
