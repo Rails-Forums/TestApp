@@ -1,27 +1,17 @@
-// Now that we have users and posts we can do a simple home page to indicate if a user is signed in or not and to get a user signed in
 - if user_signed_in?
   %h1 Hello #{current_user.username}
-  // To show posts on the home screen instead of the post page
-  %table
-    %thead
-      %tr
-        %th Body
-        %th Username
-        %th
-        %th
-        %th
-
-    %tbody
+  .grid-x
+    .medium-4.cell
+      = render "posts/form"
+    .medium-7.cell
       - @posts.each do |post|
-        %tr
-          %td= post.body
-          %td= post.user.username
-          %td= link_to 'Show', post
-          %td= link_to 'Edit', edit_post_path(post)
-          %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
-  %br/
-  = link_to 'New Post', new_post_path
-
+        .callout
+          %h5= post.body
+          %p
+            Posted by:
+            = post.user.username
+          - if current_user == post.user
+            %p= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
 
 - else
   %h1 Welcome
