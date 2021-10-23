@@ -28,7 +28,7 @@ $(document).on('turbolinks:load', function() {
 
 
 // Custom scss files.
-import 'src/application'
+import 'entrypoints/application'
 
 // images
 require.context('../images', true)
