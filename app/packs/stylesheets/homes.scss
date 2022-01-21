@@ -1,0 +1,22 @@
+.round {
+  border-radius: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+.paddingtop {
+  padding-top: 20px;
+}
+
+a.button, input.button{
+  border-radius: 10px;
+  background-color: gray;
+}
+
+a.button:hover, input.button:hover{
+  border-radius: 10px;
+  background-color: lightgray;
+  color: gray;
+}
