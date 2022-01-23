@@ -7,6 +7,11 @@
       - @posts.each do |post|
         .callout
           %h5= post.body
+          - if post.file.attached?
+            - if post.file.image?
+              .thumbnail= image_tag post.file.variant(resize: "200x200")
+            - if post.file.video?
+              = video_tag rails_blob_path(post.file), controls: true, class: "small"
           %p
             Posted by:
             = post.user.username
