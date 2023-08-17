@@ -20,3 +20,25 @@ a.button:hover, input.button:hover{
   background-color: lightgray;
   color: gray;
 }
+
+// Phone Css only
+@media (max-width: 768px) {
+  html body {
+    background-color: green;
+  }
+  
+  .computer{
+    display: none;
+  }
+}
+
+@media (min-width: 800px) {
+  html body {
+    background-color: lightseagreen;
+  }
+
+  .mobile{
+    display: none;
+  }
+
+}

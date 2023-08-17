@@ -59,6 +59,9 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  # Change Url to Ngork provided url
+  config.hosts << "1831-2601-8b-4500-e4a0-6915-490a-f783-a123.ngrok.io"
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
