@@ -10,9 +10,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-
-  # Code sinipit will be found in the describtion below, it does not come with this code in the controler so had do some research to find it for devise and make our changes
-
   def create
     build_resource(sign_up_params)
 
@@ -47,9 +44,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+
+  # Need these lines in the code, Change where needed
+  def destroy
+    @user = current_user
+    require 'stripe'
+    Stripe::Customer.delete(@user.stripe_id)
+    @user.destroy
+    redirect_to root_path, notice: 'User deleted.'
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

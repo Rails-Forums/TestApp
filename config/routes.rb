@@ -12,4 +12,11 @@ Rails.application.routes.draw do
   # This how we get the create edit update destory and index pages for the refernce post
   resources :posts
 
+  # Stripe Billing
+  get 'billing/index', as: :billing
+  get '/card/new' => 'billing#new_card', as: :add_payment_method
+  post "/card" => "billing#create_card", as: :create_payment_method
+  get '/success' => 'billing#success', as: :success
+  post '/subscription' => 'billing#subscribe', as: :subscribe
+
 end

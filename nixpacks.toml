@@ -1,4 +1,0 @@
-[phases.setup]
-nixPkgs = ["...", "imagemagick"]
-
-# To see the uploaded images need to include this to download that package
