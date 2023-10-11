@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   # This how we get the create edit update destory and index pages for the refernce post
   resources :posts
+  resources :users
 
 end

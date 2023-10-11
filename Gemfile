@@ -25,6 +25,7 @@ gem 'image_processing', '~> 1.2'
 gem "haml-rails", "~> 2.0"
 
 gem 'devise'
+gem 'friendly_id', '~> 5.4.0'
 
 gem 'foundation-rails'
 gem 'autoprefixer-rails'

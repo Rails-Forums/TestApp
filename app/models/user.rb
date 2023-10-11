@@ -3,4 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # My bad I spelled destroy wrong thats why that errored out.
   has_many :posts, dependent: :destroy
+
+  extend FriendlyId
+  friendly_id :username, use: :slugged
 end

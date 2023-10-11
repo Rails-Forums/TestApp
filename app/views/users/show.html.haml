@@ -1,0 +1,18 @@
+.grid-x
+  .medium-1.cell
+  .medium-3.cell
+  .medium-8.cell
+    %h1= @user.username
+    %h5
+      .grid-x
+        .medium-2.cell
+          %b
+            #{@user.posts.count}
+          posts
+.grid-x
+  - @user.posts.each do |post|
+    .medium-4.cell.space
+      .callout
+        = post.content
+        %br/
+        = link_to 'Destroy', post, 'data-turbo-method': :delete, data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "button" if current_user?(post.user)

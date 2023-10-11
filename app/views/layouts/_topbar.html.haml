@@ -5,6 +5,7 @@
   .top-bar-right
     %ul.menu
       - if user_signed_in?
+        %li= link_to "Profile" , user_path(current_user)
         %li= link_to "Sign Out", destroy_user_session_path, method: :delete
       - else
         %li= link_to "Sign In",  new_user_session_path
