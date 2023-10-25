@@ -30,6 +30,9 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 
+gem 'jsbundling-rails'
+gem 'cssbundling-rails'
+
 # Rails 7 new gems
 gem "sprockets-rails"
 gem "importmap-rails"
